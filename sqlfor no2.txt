@@ -1,0 +1,67 @@
+ 
+CREATE TABLE geographical_location (
+  Location_ID INT(11) PRIMARY KEY,
+  Village VARCHAR(100),
+  Parish VARCHAR(100),
+  Sub_County VARCHAR(100),
+  County VARCHAR(100),
+  Region VARCHAR(50),
+  Population INT(11),
+  Coordinates VARCHAR(100),
+  Malaria_Risk_Level VARCHAR(50),
+  Health_Facilities_Count INT(11),
+  ITN_Coverage DECIMAL(5,2),
+  Reported_Cases INT(11)
+);
+
+CREATE TABLE supply_chain (
+  Supply_ID INT(11) PRIMARY KEY,
+  Resource_ID INT(11),
+  Facility_ID INT(11),
+  Quantity_Shipped INT(11),
+  Shipment_Date DATE,
+  Expected_Arrival_Date DATE,
+  Shipped_By INT(11),
+  Status VARCHAR(50),
+  Update_Date DATE
+);
+
+CREATE TABLE resource (
+  Resource_ID INT(11) PRIMARY KEY,
+  Facility_ID INT(11),
+  Resource_Type VARCHAR(50),
+  Quantity INT(11),
+  Last_Updated_Date DATE,
+  Description TEXT,
+  Date_Added DATE,
+  Update_Date DATE
+);
+
+CREATE TABLE treatment (
+  Treatment_ID INT(11) PRIMARY KEY,
+  Treatment_Name VARCHAR(50),
+  Treatment_Description TEXT,
+  Dosage VARCHAR(50),
+  Side_Effects TEXT,
+  Date_Added DATE,
+  Update_Date DATE
+);
+
+CREATE TABLE malaria_type (
+  Type_ID INT(11) PRIMARY KEY,
+  Type_Name VARCHAR(50),
+  Description TEXT,
+  Date_Added DATE,
+  Added_By INT(11),
+  Update_Date DATE
+);
+
+CREATE TABLE user (
+  User_ID INT(11) PRIMARY KEY,
+  First_Name VARCHAR(50),
+  Last_Name VARCHAR(50),
+  Preferred_Name VARCHAR(50),
+  Role_ID INT(11),
+  Username VARCHAR(50),
+  Password VARCHAR(100),
+  Facility_ID INT(11)
