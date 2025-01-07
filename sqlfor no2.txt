@@ -7,11 +7,6 @@ CREATE TABLE geographical_location (
   County VARCHAR(100),
   Region VARCHAR(50),
   Population INT(11),
-  Coordinates VARCHAR(100),
-  Malaria_Risk_Level VARCHAR(50),
-  Health_Facilities_Count INT(11),
-  ITN_Coverage DECIMAL(5,2),
-  Reported_Cases INT(11)
 );
 
 CREATE TABLE supply_chain (
@@ -56,7 +51,7 @@ CREATE TABLE malaria_type (
   Update_Date DATE
 );
 
-CREATE TABLE user (
+CREATE TABLE user_ID (
   User_ID INT(11) PRIMARY KEY,
   First_Name VARCHAR(50),
   Last_Name VARCHAR(50),
@@ -64,4 +59,5 @@ CREATE TABLE user (
   Role_ID INT(11),
   Username VARCHAR(50),
   Password VARCHAR(100),
-  Facility_ID INT(11)
+  Facility_ID INT(11 
+)
